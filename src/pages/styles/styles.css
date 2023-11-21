@@ -1,4 +1,10 @@
+/* Navigation */
+
+
+
+
 /* Home */
+
 .category-tile {
     height: 250px;
     background-size: cover;
@@ -15,10 +21,6 @@
     margin-top: 30px;
 }
 
-.home-banner {
-    background-color: gray;
-    width: 100%;
-}
 
 .card {
     border: none !important;

@@ -28,7 +28,7 @@ function Signup() {
                     <Form.Group>
                         <Button type='submit'>Login</Button>
                     </Form.Group>
-                    <p className='pt-3'>Don't have an account?<Link to="/signup"></Link></p>
+                    <p className='pt-3'>Already have an account?<Link to="/login">Login</Link></p>
                 </Form>
             </Col>
             <Col md={6} className="signup__image--container"></Col>
