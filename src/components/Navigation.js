@@ -6,7 +6,7 @@ import { LinkContainer } from "react-router-bootstrap";
 
 function Navigation() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-secondary position-fixed" style={{width: '100%'}}>
       <Container>
         <LinkContainer to="/">
         <Navbar.Brand>Shop Savvy</Navbar.Brand>

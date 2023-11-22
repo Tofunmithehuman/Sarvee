@@ -7,7 +7,7 @@ import '../pages/styles/styles.css';
 
 function Home() {
   return (
-    <div className='Home'>
+    <div className='Home' style={{paddingTop: '80px'}}>
       <img src='https://res.cloudinary.com/dzzwvcapu/image/upload/c_scale,q_100,r_2,w_1024/v1700146528/Shop_Savvy_yxrnt5.jpg' alt='banner'/>
       <div className='featured-products-container container mt-4'>
           <h2>Last products</h2>
