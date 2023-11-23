@@ -15,7 +15,7 @@ function Login() {
   }
 
   return (
-    <Container style={{paddingTop: "60px"}}>
+    <Container style={{paddingTop: "60px", background: '#000', color: '#fff'}}>
         <Row>
           <Col md={6} className='login__form--container' style={{marginTop: "-70px"}}>
             <Form style={{width: "100%"}}>

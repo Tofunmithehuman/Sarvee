@@ -1,9 +1,19 @@
 /* Navigation */
+.logout-btn {
+    margin: 0 auto;
+    display: block !important;
+}
 
-
+.logo {
+    width: 50px;
+}
 
 
 /* Home */
+.Home {
+    background-color: #000;
+    color: #fff;
+}
 
 .category-tile {
     height: 250px;
@@ -63,7 +73,7 @@ img.card-img-top.product-preview-img {
 
 /* signup */
 .signup__image--container {
-    background: url("https://images.unsplash.com/photo-1699724684257-7fa72eec303d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background: url("https://images.unsplash.com/photo-1690520941460-414d1d930b34?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     height: 90vh;
     background-size: cover;
 }
