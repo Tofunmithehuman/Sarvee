@@ -18,6 +18,11 @@ function NewProduct() {
   const [createProduct, {isError, error, isLoading, isSuccess}] = useCreateProductMutation();
 
 
+  function showWidget() {
+    
+  }
+
+
 
   return (
     <Container style={{paddingTop: "100px", paddingBottom: "50px", background: '#000', color: '#fff'}}>
@@ -54,11 +59,12 @@ function NewProduct() {
                 </Form.Group>  
 
                 <Form.Group className="mb-3">
-                  <Button type='button'>Upload Images</Button>
+                  <Button type='button' onClick={showWidget}>Upload Images</Button>
                   <div className='image-previw-container'>
                     {images.map((image) => (
                       <div className='image-preview'>
-                        
+                          <img src={image.url} />
+
                       </div>
                     ))}
                   </div>

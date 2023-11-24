@@ -15,17 +15,17 @@ function Navigation() {
   }
 
   return (
-    <Navbar expand="lg" className="bg-primary position-fixed" style={{width: '100%'}}>
+    <Navbar expand="lg" className="navigation" style={{width: '100%'}}>
       <Container>
         <LinkContainer to="/">
-        <Navbar.Brand>Shop Savvy</Navbar.Brand>
+        <Navbar.Brand><h5 style={{color: "#fff"}}>Shop Savvy</h5></Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
 
             {!user && <LinkContainer to='/login'>
-                        <Nav.Link>Login</Nav.Link>
+                        <Nav.Link><h6 style={{color: "#fff"}}>Login</h6></Nav.Link>
                     </LinkContainer>}
 
             {user && (
