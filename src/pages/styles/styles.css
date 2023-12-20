@@ -28,9 +28,6 @@
     color: #fff;
 }
 
-.Home img {
-    width: -webkit-fill-available;
-}
 .category-tile {
     height: 250px;
     background-size: cover;
@@ -148,6 +145,11 @@ img.card-img-top.product-preview-img {
 
 
 @media screen and (max-width: 768px) {
+
+    .Home img {
+        width: -webkit-fill-available;
+    }
+
     .new-producnt__image--container,  
     .login__image--container,
     .signup__image--container {
