@@ -14,7 +14,7 @@ function Home() {
           {/* last products here */}
       
         <div>
-          <Link to="/category/all" style={{textAlign: "right", display: "block", textDecoration: "none"}}>
+          <Link to="/category/all" style={{textAlign: "center", display: "block", textDecoration: "none"}}>
             See more {">>"}
           </Link>
         </div>
@@ -23,7 +23,7 @@ function Home() {
       <div className='sale_banner--container mt-4'>
         <img src='https://res.cloudinary.com/dzzwvcapu/image/upload/v1700572876/Untitled_design_rg0zcu.jpg' alt='banner'/>
       </div>
-      <div className='recent-products-container mt-4 p-5'>
+      <div className='recent-products-container mt-4 p-4'>
         <h2>Categories</h2>
         <Row>
           {categories.map((category) => (

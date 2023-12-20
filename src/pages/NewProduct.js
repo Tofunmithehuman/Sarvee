@@ -3,6 +3,7 @@ import './styles/styles.css';
 import { useNavigate } from 'react-router-dom';
 import { useCreateProductMutation } from '../Redux/services/appApi';
 import { Alert, Col, Container, Form, Row, Button } from 'react-bootstrap';
+import axios from '../axios';
 import { Link } from 'react-router-dom';
 
 function NewProduct() {
@@ -13,13 +14,52 @@ function NewProduct() {
   const [category, setCategory] = useState("");
   const [images, setImages] = useState([]);
   const [imgToRemove, setImgToRemove] = useState(null);
-
   const navigate = useNavigate();
   const [createProduct, {isError, error, isLoading, isSuccess}] = useCreateProductMutation();
 
 
+
+  function handleRemoveImg(imgObj) {
+    setImgToRemove(imgObj.public_id);
+    axios
+    .delete(`/image/${imgObj.public_id}/`)
+    .then((res) => {
+      setImgToRemove();
+      setImages(prev => prev.filter((img) => img.public_id !== imgObj.public_id));
+    })
+    .catch((e) => console.log(e));
+  }
+
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if(!name || !description || !price || !category || !images.length) {
+      return alert('Please fill out all fields')
+    }
+    createProduct({name, description, price, category, images})
+    .then(({data}) => {
+      if(data.length > 0) {
+        setTimeout(() => {
+          navigate("/")
+        }, 1500)
+      }
+    })
+  }
+
+
   function showWidget() {
-    
+    const widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: 'dzzwvcapu',
+        uploadPreset: 'u0yzntl8',
+      }, 
+      (error, result) => {
+        if(!error && result.event === "success"){
+          setImages((prev) => [...prev, {url: result.info.url, public_id: result.info.public_id}])
+        }
+      }
+    );
+    widget.open();
   }
 
 
@@ -28,8 +68,8 @@ function NewProduct() {
     <Container style={{paddingTop: "100px", paddingBottom: "50px", background: '#000', color: '#fff'}}>
       <Row>
         <Col md={6} className="new-product__form--container">
-          <Form style={{width: "100%"}}>
-                <h1>Create a product</h1>
+          <Form style={{width: "100%"}} onSubmit={handleSubmit}>
+                <h1 className='mt-4'>Create a product</h1>
                   {isSuccess && <Alert variant='success'>Product created with success</Alert>}
                 {isError && <Alert variant='danger'>{error.data}</Alert>}
                 <Form.Group className="mb-3">
@@ -52,19 +92,19 @@ function NewProduct() {
                   <Form.Select>
                     <option disabled selected> -- Select One -- </option>
                     <option value="technology"> Technology </option>
-                    <option value="laptop"> Laptop </option>
+                    <option value="laptop"> Services </option>
                     <option value="phone"> Phone </option>
-                    <option value="clothe"> Clothe </option>                   
+                    <option value="clothe"> Fasihon </option>                   
                   </Form.Select>
                 </Form.Group>  
 
                 <Form.Group className="mb-3">
                   <Button type='button' onClick={showWidget}>Upload Images</Button>
-                  <div className='image-previw-container'>
+                  <div className='images-preview-container'>
                     {images.map((image) => (
                       <div className='image-preview'>
                           <img src={image.url} />
-
+                          <i className='fa fa-times-circle' onClick={() => handleRemoveImg(image)}></i>
                       </div>
                     ))}
                   </div>
@@ -75,7 +115,7 @@ function NewProduct() {
                 </Form.Group>
               </Form>
         </Col>
-        <Col md={6} classname="ew-producnt__image--container"></Col>
+        <Col md={6} className="new-producnt__image--container"></Col>
       </Row>
     </Container>
   )
