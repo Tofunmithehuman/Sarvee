@@ -23,7 +23,7 @@ function Home() {
       <div className='sale_banner--container mt-4'>
         <img src='https://res.cloudinary.com/dzzwvcapu/image/upload/v1700572876/Untitled_design_rg0zcu.jpg' alt='banner'/>
       </div>
-      <div className='recent-products-container mt-4 p-3'>
+      <div className='recent-products-container mt-4' id='catp'>
         <h2>Categories</h2>
         <Row>
           {categories.map((category) => (

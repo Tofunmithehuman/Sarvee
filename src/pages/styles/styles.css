@@ -27,6 +27,9 @@
     background-color: #000;
     color: #fff;
 }
+.Home #catp {
+    padding: 3rem;
+}
 
 .category-tile {
     height: 250px;
@@ -148,6 +151,9 @@ img.card-img-top.product-preview-img {
 
     .Home img {
         width: -webkit-fill-available;
+    }
+    .Home #catp {
+        padding: 1rem;
     }
 
     .new-producnt__image--container,  
