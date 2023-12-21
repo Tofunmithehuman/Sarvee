@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCreateProductMutation } from '../Redux/services/appApi';
 import { Alert, Col, Container, Form, Row, Button } from 'react-bootstrap';
 import axios from '../axios';
-import { Link } from 'react-router-dom';
+
 
 function NewProduct() {
 
@@ -24,7 +24,7 @@ function NewProduct() {
     axios
     .delete(`/image/${imgObj.public_id}/`)
     .then((res) => {
-      setImgToRemove();
+      setImgToRemove(null);
       setImages(prev => prev.filter((img) => img.public_id !== imgObj.public_id));
     })
     .catch((e) => console.log(e));
@@ -103,7 +103,7 @@ function NewProduct() {
                   <div className='images-preview-container'>
                     {images.map((image) => (
                       <div className='image-preview'>
-                          <img src={image.url} />
+                          <img src={image.url} alt='img' />
                           <i className='fa fa-times-circle' onClick={() => handleRemoveImg(image)}></i>
                       </div>
                     ))}
