@@ -18,7 +18,7 @@ function Navigation() {
     <Navbar expand="lg" className="navigation" style={{width: '100%'}}>
       <Container>
         <LinkContainer to="/">
-        <Navbar.Brand><h5 style={{color: "#fff"}}>Shop Savvy</h5></Navbar.Brand>
+        <Navbar.Brand><h5 style={{color: "#fff"}}>SAVVY</h5></Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

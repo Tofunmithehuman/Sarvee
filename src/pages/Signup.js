@@ -23,30 +23,34 @@ function Signup() {
   return (
     <Container style={{paddingTop: "60px", background: '#000', color: '#fff'}}>
         <Row>
-            <Col md={6} className='signup__form--container' style={{marginTop: "-70px"}}>
-                <Form style={{width: "100%"}} onSubmit={handleSignup}>
+            <Col md={6} className='signup__form--container'>
+                <Form style={{width: "90%"}} onSubmit={handleSignup}>
+                <br />
+                <br />
                 <h1>Create an account</h1>
-
+                <br />
+                <br />
                 {isError && <Alert variant='danger'>{error.data}</Alert>}
                 <Form.Group>
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" placeholder='Enter name' value={name} required onChange={(e) => setName(e.target.value)}/>
+                    <Form.Label style={{width: "100%", textAlign: "left"}}>Your Name</Form.Label>
+                    <Form.Control type="text" placeholder='Enter your name' value={name} required onChange={(e) => setName(e.target.value)}/>
                 </Form.Group>
-
+                <br />
                 <Form.Group>
-                    <Form.Label>Email Address</Form.Label>
-                    <Form.Control type="email" placeholder='Enter email' value={email} required onChange={(e) => setEmail(e.target.value)}/>
+                    <Form.Label style={{width: "100%", textAlign: "left"}}>Your Email</Form.Label>
+                    <Form.Control type="email" placeholder='Enter your email' value={email} required onChange={(e) => setEmail(e.target.value)}/>
                 </Form.Group>
-                
+                <br />
                 <Form.Group className='mb-3'>
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type='password' placeholder='Enter Password' value={password} required onChange={(e) => setPassword(e.target.value)}/>
+                    <Form.Label style={{width: "100%", textAlign: "left"}}>Password</Form.Label>
+                    <Form.Control type='password' placeholder='Enter your Password' value={password} required onChange={(e) => setPassword(e.target.value)}/>
                 </Form.Group>  
-
+                <br />
                 <Form.Group>
-                    <Button type='submit' disabled={isLoading}>Create account</Button>
+                    <Button type='submit' style={{width: "100%"}} disabled={isLoading}>Create account</Button>
                 </Form.Group>
-                <p className='pt-3'>Already have an account?<Link to="/login">Login</Link></p>
+                <br />
+                <p className='pt-3'>Already have an account? <Link to="/login">Login</Link></p>
                 </Form>
             </Col>
             <Col md={6} className="signup__image--container"></Col>
