@@ -21,7 +21,7 @@ function Signup() {
 
 
   return (
-    <Container style={{paddingTop: "60px", background: '#000', color: '#fff'}}>
+    <Container style={{paddingTop: "60px"}}>
         <Row>
             <Col md={6} className='signup__form--container'>
                 <Form style={{width: "90%"}} onSubmit={handleSignup}>
