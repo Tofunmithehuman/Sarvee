@@ -65,30 +65,31 @@ function NewProduct() {
 
 
   return (
-    <Container style={{paddingTop: "100px", paddingBottom: "50px", background: '#000', color: '#fff'}}>
+    <Container style={{paddingTop: "100px", paddingBottom: "50px", background: '#80D0C7', color: '#fff'}}>
       <Row>
         <Col md={6} className="new-product__form--container">
           <Form style={{width: "100%"}} onSubmit={handleSubmit}>
                 <h1 className='mt-4'>Create a product</h1>
+                <br />
                   {isSuccess && <Alert variant='success'>Product created with success</Alert>}
                 {isError && <Alert variant='danger'>{error.data}</Alert>}
                 <Form.Group className="mb-3">
-                  <Form.Label>Product name</Form.Label>
+                  <Form.Label style={{width: "100%", textAlign: "left"}}>Product name</Form.Label>
                   <Form.Control type="text" placeholder='Enter product name' value={name} required onChange={(e) => setName(e.target.value)}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label>Product description</Form.Label>
-                  <Form.Control as='textarea' placeholder='Product description' style={{height: "100px"}} value={description} required onChange={(e) => setDescription(e.target.value)}/>
+                  <Form.Label style={{width: "100%", textAlign: "left"}}>Product description</Form.Label>
+                  <Form.Control as='textarea' placeholder='Enter product description' style={{height: "100px"}} value={description} required onChange={(e) => setDescription(e.target.value)}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                  <Form.Label>Price($) </Form.Label>
-                  <Form.Control type="number" placeholder='Price ($)' value={price} required onChange={(e) => setPrice(e.target.value)}/>
+                  <Form.Label style={{width: "100%", textAlign: "left"}}>Product price($) </Form.Label>
+                  <Form.Control type="number" placeholder='Enter Product price ($)' value={price} required onChange={(e) => setPrice(e.target.value)}/>
                 </Form.Group>
               
                 <Form.Group className='mb-3' onChange={(e) => setCategory(e.target.value)}>
-                  <Form.Label>Category</Form.Label>
+                  <Form.Label style={{width: "100%", textAlign: "left"}}>Category</Form.Label>
                   <Form.Select>
                     <option disabled selected> -- Select One -- </option>
                     <option value="technology"> Technology </option>
@@ -96,10 +97,12 @@ function NewProduct() {
                     <option value="phone"> Phone </option>
                     <option value="clothe"> Fasihon </option>                   
                   </Form.Select>
-                </Form.Group>  
+                </Form.Group> 
+                <br />
+                <br /> 
 
-                <Form.Group className="mb-3">
-                  <Button type='button' onClick={showWidget}>Upload Images</Button>
+                <Form.Group>
+                  <Button type='button' style={{width: "100%"}} onClick={showWidget}>Upload Images</Button>
                   <div className='images-preview-container'>
                     {images.map((image) => (
                       <div className='image-preview'>
@@ -111,7 +114,7 @@ function NewProduct() {
                 </Form.Group>
 
                 <Form.Group>
-                  <Button type='submit' disabled={isLoading || isSuccess}>Create Product</Button>
+                  <Button type='submit' style={{width: "100%"}} disabled={isLoading || isSuccess}>Create Product</Button>
                 </Form.Group>
               </Form>
         </Col>
