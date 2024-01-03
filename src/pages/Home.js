@@ -24,10 +24,11 @@ function Home() {
               display: "block",
               textDecoration: "none",
               color: "#c5fd7a",
-              margin: "40px 0"
+              margin: "40px 0",
+              fontSize: "10px"
             }}
           >
-            See more {">>"}
+            See more...
           </Link>
         </div>
       </div>
