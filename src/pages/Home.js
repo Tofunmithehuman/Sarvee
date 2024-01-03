@@ -23,6 +23,8 @@ function Home() {
               textAlign: "center",
               display: "block",
               textDecoration: "none",
+              color: "#c5fd7a",
+              margin: "40px 0"
             }}
           >
             See more {">>"}
@@ -41,7 +43,7 @@ function Home() {
         <Row>
           {categories.map((category, index) => (
             <LinkContainer
-              key={index} // Add key prop with a unique value
+              key={index}  // Add key prop with a unique value
               to={`/category/${category.name.toLocaleLowerCase()}`}
             >
               <Col md={4}>

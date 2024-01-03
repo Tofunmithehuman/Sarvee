@@ -131,7 +131,7 @@ img.card-img-top.product-preview-img {
 
 @media screen and (max-width: 768px) {
   .Home img {
-    width: 100%;
+    width: 93%;
   }
   .Home #catp {
     padding: 1rem;

@@ -136,7 +136,7 @@ function NewProduct() {
                 </option>
                 <option value="technology"> Technology </option>
                 <option value="laptop"> Services </option>
-                <option value="clothe"> Fasihon </option>
+                <option value="clothe"> Fashion </option>
               </Form.Select>
             </Form.Group>
             <br />
