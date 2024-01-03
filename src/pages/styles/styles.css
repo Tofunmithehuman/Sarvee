@@ -2,10 +2,15 @@
 
 .navigation {
   position: fixed;
-  background-color: #fecc04d7;
+  background-color: #212121;
   backdrop-filter: blur(5px);
   z-index: 1000;
   padding: 20px 30px;
+}
+
+.custom-navbar-toggle {
+  background-color: #c5fd7a;
+  border-color: #c5fd7a;
 }
 
 .logout-btn {
@@ -23,7 +28,7 @@
 
 /* Home */
 .Home {
-  background: #80d0c7;
+  background: #212121;
   color: #fff;
 }
 .Home #catp {
@@ -66,41 +71,35 @@ img.card-img-top.product-preview-img {
 }
 
 /* login */
-.login__image--container {
-  background: url("https://images.unsplash.com/photo-1640582024795-9208f2f0e177?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  height: 90vh;
-  background-size: cover;
-}
-
 .login__form--container {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80vh;
   justify-content: center;
+  margin: auto;
 }
 
 /* signup */
-.signup__image--container {
-  background: url("https://images.unsplash.com/photo-1690520941460-414d1d930b34?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  height: 90vh;
-  background-size: cover;
-}
-
 .signup__form--container {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80vh;
   justify-content: center;
+  margin: auto;
 }
 
 /* NewProduct */
+.new-product__form--container {
+  margin: auto;
+}
+
 .images-preview-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
   gap: 10px;
-  margin-top: 40px;
+  margin: 40px 0;
 }
 
 .image-preview {
@@ -129,12 +128,6 @@ img.card-img-top.product-preview-img {
   color: orange;
 }
 
-.new-producnt__image--container {
-  background-image: url("https://images.unsplash.com/photo-1683464874762-50ae2e773e39?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  background-size: cover;
-  background-position: center;
-  height: 75vh;
-}
 
 @media screen and (max-width: 768px) {
   .Home img {
@@ -144,9 +137,4 @@ img.card-img-top.product-preview-img {
     padding: 1rem;
   }
 
-  .new-producnt__image--container,
-  .login__image--container,
-  .signup__image--container {
-    display: none;
-  }
 }

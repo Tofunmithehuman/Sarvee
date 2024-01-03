@@ -39,8 +39,9 @@ function Home() {
       <div className="recent-products-container mt-4" id="catp">
         <h2>Categories</h2>
         <Row>
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <LinkContainer
+              key={index} // Add key prop with a unique value
               to={`/category/${category.name.toLocaleLowerCase()}`}
             >
               <Col md={4}>

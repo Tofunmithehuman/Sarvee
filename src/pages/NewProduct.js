@@ -68,7 +68,8 @@ function NewProduct() {
       style={{
         paddingTop: "100px",
         paddingBottom: "50px",
-        background: "#80D0C7",
+        width: "90%",
+        background: "#212121",
         color: "#fff",
       }}
     >
@@ -129,13 +130,12 @@ function NewProduct() {
                 Category
               </Form.Label>
               <Form.Select>
-                <option disabled selected>
+                <option disabled defaultValue="">
                   {" "}
                   -- Select One --{" "}
                 </option>
                 <option value="technology"> Technology </option>
                 <option value="laptop"> Services </option>
-                <option value="phone"> Phone </option>
                 <option value="clothe"> Fasihon </option>
               </Form.Select>
             </Form.Group>
@@ -174,7 +174,6 @@ function NewProduct() {
             </Form.Group>
           </Form>
         </Col>
-        <Col md={6} className="new-producnt__image--container"></Col>
       </Row>
     </Container>
   );

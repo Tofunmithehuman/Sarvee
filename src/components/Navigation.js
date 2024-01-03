@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { Container, Button, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "../pages/styles/styles.css";
 import { LinkContainer } from "react-router-bootstrap";
@@ -13,15 +14,23 @@ function Navigation() {
     dispatch(logout());
   }
 
+  const StyledWrapper = styled.div`
+    background-color: #fff;
+  `;
+
+
   return (
     <Navbar expand="lg" className="navigation" style={{ width: "100%" }}>
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <h5 style={{ color: "#fff" }}>SAVVY</h5>
+            <h5 style={{ color: "#c5fd7a" }}>SAVVY</h5>
           </Navbar.Brand>
         </LinkContainer>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="custom-navbar-toggle"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {!user && (
@@ -35,15 +44,16 @@ function Navigation() {
             {user && (
               <NavDropdown title={`${user.email}`} id="basic-nav-dropdown">
                 {user.isAdmin && (
-                  <>
+                  <StyledWrapper>
                     <LinkContainer to="/dashbord">
                       <NavDropdown.Item>Dashbord</NavDropdown.Item>
                     </LinkContainer>
                     <LinkContainer to="/new-product">
                       <NavDropdown.Item>Create Product</NavDropdown.Item>
                     </LinkContainer>
-                  </>
+                  </StyledWrapper>
                 )}
+                
 
                 {!user.isAdmin && (
                   <>

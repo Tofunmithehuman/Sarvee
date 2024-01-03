@@ -9,7 +9,7 @@ export const appApi = createApi({
     baseUrl: "https://shopsavvy-backend-production.up.railway.app",
 
     // local
-    // baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3500' }),
+    // baseUrl: 'http://localhost:3500',
   }),
   endpoints: (builder) => ({
     signup: builder.mutation({
