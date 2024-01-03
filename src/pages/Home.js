@@ -24,8 +24,8 @@ function Home() {
               display: "block",
               textDecoration: "none",
               color: "#c5fd7a",
-              margin: "40px 0",
-              fontSize: "10px"
+              margin: "40px 0 10px",
+              fontSize: "12px"
             }}
           >
             See more...
