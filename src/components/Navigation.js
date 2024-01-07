@@ -36,7 +36,7 @@ function Navigation() {
             {!user && (
               <LinkContainer to="/login">
                 <Nav.Link>
-                  <h6 style={{ color: "#fff", backgroundColor: "#c5fd7a" }}>Login</h6>
+                  <h6 style={{ color: "#fff"}}>Login</h6>
                 </Nav.Link>
               </LinkContainer>
             )}
@@ -67,7 +67,7 @@ function Navigation() {
                 )}
                 <NavDropdown.Divider />
                 <Button
-                  variant="primary"
+                  style={{backgroundColor: "#c5fd7a", color: "#000", border: "#c5fd7a"}}
                   onClick={handleLogout}
                   className="logout-btn"
                 >
