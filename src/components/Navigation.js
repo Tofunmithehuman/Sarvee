@@ -24,7 +24,7 @@ function Navigation() {
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <h5 style={{ color: "#fff" }}>SAVVY</h5>
+            <h5 style={{ color: "#fff"}}>SAVVY</h5>
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle
@@ -36,7 +36,7 @@ function Navigation() {
             {!user && (
               <LinkContainer to="/login">
                 <Nav.Link>
-                  <h6 style={{ color: "#fff" }}>Login</h6>
+                  <h6 style={{ color: "#fff", background-color: "c5fd7a" }}>Login</h6>
                 </Nav.Link>
               </LinkContainer>
             )}
