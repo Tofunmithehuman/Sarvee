@@ -17,6 +17,7 @@ function Home() {
           autoPlay
           loop
           muted
+          
         />
         <div className="featured-products-container container mt-4">
           <h2>Last products</h2>
