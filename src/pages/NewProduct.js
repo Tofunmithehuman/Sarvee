@@ -17,9 +17,10 @@ function NewProduct() {
     useCreateProductMutation();
 
   function handleRemoveImg(imgObj) {
+    console.log("Deleting image with public_id:", imgObj.public_id);
     setImgToRemove(imgObj.public_id);
     axios
-      .delete(`/image/${imgObj.public_id}/`)
+      .delete(`/images/${imgObj.public_id}/`)
       .then((res) => {
         setImgToRemove(null);
         setImages((prev) =>
@@ -130,7 +131,7 @@ function NewProduct() {
                 Category
               </Form.Label>
               <Form.Select>
-                <option disabled defaultValue="">
+                <option disabled selected>
                   {" "}
                   -- Select One --{" "}
                 </option>
@@ -152,12 +153,13 @@ function NewProduct() {
               </Button>
               <div className="images-preview-container">
                 {images.map((image) => (
-                  <div className="image-preview">
+                  <div key={image.public_id} className="image-preview">
                     <img src={image.url} alt="img" />
+                    {imgToRemove !== image.public_id && 
                     <i
                       className="fa fa-times-circle"
                       onClick={() => handleRemoveImg(image)}
-                    ></i>
+                    ></i>}
                   </div>
                 ))}
               </div>
