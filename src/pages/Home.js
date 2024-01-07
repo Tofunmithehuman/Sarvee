@@ -9,7 +9,7 @@ function Home() {
 
 
   return (
-    <div className="Home" style={{ paddingTop: "80px" }}>
+    <div className="Home" style={{ paddingTop: "90px" }}>
       <div className="homeContainer">
         <video
           src="https://res.cloudinary.com/dzzwvcapu/video/upload/v1704545830/savvy_banner_wlinev.mp4"
@@ -30,7 +30,7 @@ function Home() {
                 textAlign: "center",
                 display: "block",
                 textDecoration: "none",
-                color: "#c5fd7a",
+                color: "#000",
                 margin: "40px 0 10px",
                 fontSize: "12px",
               }}

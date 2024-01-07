@@ -69,8 +69,8 @@ function NewProduct() {
         paddingTop: "100px",
         paddingBottom: "50px",
         width: "90%",
-        background: "#212121",
-        color: "#fff",
+        background: "#fff",
+        color: "#000",
       }}
     >
       <Row>
