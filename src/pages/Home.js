@@ -29,7 +29,7 @@ function Home() {
                 textAlign: "center",
                 display: "block",
                 textDecoration: "none",
-                color: "#c5fd7a",
+                color: "#000",
                 margin: "40px 0 10px",
                 fontSize: "12px",
               }}
