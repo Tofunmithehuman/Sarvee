@@ -16,12 +16,12 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("/products")
+      .get('/products')
       .then(({ data }) => dispatch(updateProducts(data)))
       .catch((e) => {
-        console.log(`Error is coming from ${e}`)
+        console.log(`Error is coming from ${e}`);
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="Home" style={{ paddingTop: "90px" }}>
@@ -34,11 +34,13 @@ function Home() {
           muted
         />
         <div className="featured-products-container container mt-4">
-          <h2>Last products</h2>
+          <h2>Latest products</h2>
           {/* last products here */}
-          {lastProducts.map((product) => {
-            <ProductPreview {...product} />;
-          })}
+          <div className="d-flex justify-content-center flex-wrap gap-5">
+          {lastProducts.map((product) => (
+            <ProductPreview key={product._id} {...product} />
+          ))}
+          </div>
           <div>
             <Link
               to="/category/all"
@@ -68,7 +70,7 @@ function Home() {
         <Row>
           {categories.map((category, index) => (
             <LinkContainer
-              key={index} // Add key prop with a unique value
+            key={category.name} // Add key prop with a unique value
               to={`/category/${category.name.toLocaleLowerCase()}`}
             >
               <Col md={4}>

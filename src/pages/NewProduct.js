@@ -130,14 +130,11 @@ function NewProduct() {
               <Form.Label style={{ width: "100%", textAlign: "left" }}>
                 Category
               </Form.Label>
-              <Form.Select>
-                <option disabled selected>
-                  {" "}
-                  -- Select One --{" "}
-                </option>
+              <Form.Select value={category} onChange={(e) => setCategory(e.target.value)}>
+                <option disabled> -- Select One -- </option>
                 <option value="technology"> Technology </option>
-                <option value="laptop"> Services </option>
-                <option value="clothe"> Fashion </option>
+                <option value="services"> Services </option>
+                <option value="fashion"> Fashion </option>
               </Form.Select>
             </Form.Group>
             <br />
@@ -155,11 +152,12 @@ function NewProduct() {
                 {images.map((image) => (
                   <div key={image.public_id} className="image-preview">
                     <img src={image.url} alt="img" />
-                    {imgToRemove !== image.public_id && 
-                    <i
-                      className="fa fa-times-circle"
-                      onClick={() => handleRemoveImg(image)}
-                    ></i>}
+                    {imgToRemove !== image.public_id && (
+                      <i
+                        className="fa fa-times-circle"
+                        onClick={() => handleRemoveImg(image)}
+                      ></i>
+                    )}
                   </div>
                 ))}
               </div>

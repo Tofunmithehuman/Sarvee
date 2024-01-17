@@ -6,6 +6,10 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/features/userSlice";
 
+const StyledWrapper = styled.div`
+  background-color: #fff;
+`;
+
 function Navigation() {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
@@ -14,17 +18,12 @@ function Navigation() {
     dispatch(logout());
   }
 
-  const StyledWrapper = styled.div`
-    background-color: #fff;
-  `;
-
-
   return (
     <Navbar expand="lg" className="navigation" style={{ width: "100%" }}>
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <h5 style={{ color: "#fff"}}>SAVVY</h5>
+            <h5 style={{ color: "#fff" }}>SAVVY</h5>
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle
@@ -36,7 +35,7 @@ function Navigation() {
             {!user && (
               <LinkContainer to="/login">
                 <Nav.Link>
-                  <h6 style={{ color: "#fff"}}>Login</h6>
+                  <h6 style={{ color: "#fff" }}>Login</h6>
                 </Nav.Link>
               </LinkContainer>
             )}
@@ -53,7 +52,6 @@ function Navigation() {
                     </LinkContainer>
                   </StyledWrapper>
                 )}
-                
 
                 {!user.isAdmin && (
                   <>
@@ -67,7 +65,11 @@ function Navigation() {
                 )}
                 <NavDropdown.Divider />
                 <Button
-                  style={{backgroundColor: "#c5fd7a", color: "#000", border: "#c5fd7a"}}
+                  style={{
+                    backgroundColor: "#c5fd7a",
+                    color: "#000",
+                    border: "#c5fd7a",
+                  }}
                   onClick={handleLogout}
                   className="logout-btn"
                 >
