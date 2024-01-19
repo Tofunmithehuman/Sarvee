@@ -41,7 +41,7 @@
 }
 
 .Home .homeContainer {
-  max-width: 1000px;
+  max-width: 1440px;
   margin: auto;
 }
 
@@ -110,7 +110,7 @@
 
 .card {
   border: none !important;
-  width: 15rem !important;
+  width: 20rem !important;
 }
 
 img.card-img-top.product-preview-img {

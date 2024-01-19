@@ -50,7 +50,7 @@ function Home() {
         <div className="featured-products-container container mt-4">
           <h2>Latest products</h2>
           {/* last products here */}
-          <div className="d-flex justify-content-center flex-wrap gap-5">
+          <div className="d-flex justify-content-center mt-5 pt-3 flex-wrap gap-5">
             {lastProducts.map((product) => (
               <ProductPreview key={product._id} {...product} />
             ))}
