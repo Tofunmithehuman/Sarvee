@@ -16,7 +16,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get('/products')
+      .get("/products")
       .then(({ data }) => dispatch(updateProducts(data)))
       .catch((e) => {
         console.log(`Error is coming from ${e}`);
@@ -25,21 +25,35 @@ function Home() {
 
   return (
     <div className="Home" style={{ paddingTop: "90px" }}>
-      <div className="homeContainer">
-        <video
-          src="https://res.cloudinary.com/dzzwvcapu/video/upload/v1704545830/savvy_banner_wlinev.mp4"
-          alt="banner"
-          autoPlay
-          loop
-          muted
+      <div className="hero">
+        <img
+          src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1705699531/heroimg_xdtecz.png"
+          alt=""
         />
+        <div className="contain">
+          <h4>Best Available Products</h4>
+          <br />
+          <h1>Join the SARVEE movement</h1>
+          <br />
+          <p>
+            We are a community of people who want to help each other. We are
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, amet
+            sapiente. Laudantium, dicta modi. Quo quibusdam, perspiciatis
+            sapiente alias eveniet, iusto dolorem necessitatibus molestias
+            libero aperiam asperiores? Molestiae, laboriosam facilis!
+          </p>
+          <br />
+          <Link to="/">SHOP NOW</Link>
+        </div>
+      </div>
+      <div className="homeContainer">
         <div className="featured-products-container container mt-4">
           <h2>Latest products</h2>
           {/* last products here */}
           <div className="d-flex justify-content-center flex-wrap gap-5">
-          {lastProducts.map((product) => (
-            <ProductPreview key={product._id} {...product} />
-          ))}
+            {lastProducts.map((product) => (
+              <ProductPreview key={product._id} {...product} />
+            ))}
           </div>
           <div>
             <Link
@@ -70,7 +84,7 @@ function Home() {
         <Row>
           {categories.map((category, index) => (
             <LinkContainer
-            key={category.name} // Add key prop with a unique value
+              key={category.name} // Add key prop with a unique value
               to={`/category/${category.name.toLocaleLowerCase()}`}
             >
               <Col md={4}>

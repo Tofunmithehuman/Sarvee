@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
+
+/* font-family: 'Open Sans', sans-serif; */
+/* font-family: 'Merriweather', serif; */
 /* Navigation */
 
 .navigation {
@@ -6,6 +12,7 @@
   backdrop-filter: blur(5px);
   z-index: 1000;
   padding: 20px 30px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .custom-navbar-toggle {
@@ -28,8 +35,9 @@
 
 /* Home */
 .Home {
-  background: #fff;
+  background: #fbfaf8;
   color: #000;
+  font-family: 'Merriweather', serif;
 }
 
 .Home .homeContainer {
@@ -37,7 +45,42 @@
   margin: auto;
 }
 
-.Home img, video {
+.Home .hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: left;
+}
+
+.Home .hero img {
+  width: 400px;
+}
+
+.Home .hero .contain {
+  width: 499px;
+}
+
+.Home .hero .contain p{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Home .hero .contain a{
+  font-family: 'Open Sans', sans-serif;
+  color: #000;
+  background-color: #c5fd7a;
+  padding: 8px 15px;
+  text-decoration: none;
+}
+
+
+.Home img {
   width: 100%;
 }
 
@@ -137,10 +180,27 @@ img.card-img-top.product-preview-img {
 }
 
 @media screen and (max-width: 768px) {
-  .Home img, video {
+  .Home img {
     width: 93%;
   }
   .Home #catp {
     padding: 1rem;
+  }
+
+  .Home .hero {
+    margin-top: 0;
+    gap: 0;
+  }
+
+  .Home .hero img {
+    width: 300px;
+  }
+  .Home .hero .contain {
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .Home .hero .contain h4 {
+    font-size: 17px;
   }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import "../pages/styles/styles.css";
 import { LinkContainer } from "react-router-bootstrap";
 import { Card, Badge } from "react-bootstrap";
 

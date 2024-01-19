@@ -70,7 +70,7 @@ function NewProduct() {
         paddingTop: "100px",
         paddingBottom: "50px",
         width: "90%",
-        background: "#fff",
+        background: "#fbfaf8",
         color: "#000",
       }}
     >
