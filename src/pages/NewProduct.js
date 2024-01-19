@@ -72,6 +72,8 @@ function NewProduct() {
         width: "90%",
         background: "#fbfaf8",
         color: "#000",
+        fontFamily: 'Open Sans'
+
       }}
     >
       <Row>

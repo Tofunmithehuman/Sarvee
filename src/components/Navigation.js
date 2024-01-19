@@ -23,7 +23,7 @@ function Navigation() {
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <h5 style={{ color: "#fff" }}>SAVVY</h5>
+            <h5 style={{ color: "#fff" }}>SARVEE</h5>
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle
