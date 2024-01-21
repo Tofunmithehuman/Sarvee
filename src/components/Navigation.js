@@ -23,7 +23,7 @@ function Navigation() {
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <h5 style={{ color: "#fff" }}>SARVEE</h5>
+            <img src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1705793793/nav_uoak0r.jpg" alt="nav" style={{width: "170px"}} />
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle

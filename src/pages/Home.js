@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import categories from "../categories";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
@@ -14,6 +16,8 @@ function Home() {
   const products = useSelector((state) => state.products);
   const lastProducts = products.slice(0, 8);
 
+  const element = <FontAwesomeIcon icon={faCartShopping} />;
+
   useEffect(() => {
     axios
       .get("/products")
@@ -27,23 +31,21 @@ function Home() {
     <div className="Home" style={{ paddingTop: "90px" }}>
       <div className="hero">
         <img
-          src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1705699531/heroimg_xdtecz.png"
-          alt=""
+          src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1705793858/herobanner_o2qcpb.jpg"
+          alt="banner"
         />
         <div className="contain">
           <h4>Best Available Products</h4>
           <br />
-          <h1>Join the SARVEE movement</h1>
+          <h1 style={{textShadow: "2px 2px 4px rgb(186, 186, 186)", fontWeight: "600"}}><span style={{color: "rgb(123 174 54)"}}>SHOP</span> SARVEE</h1>
           <br />
           <p>
-            We are a community of people who want to help each other. We are
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, amet
-            sapiente. Laudantium, dicta modi. Quo quibusdam, perspiciatis
-            sapiente alias eveniet, iusto dolorem necessitatibus molestias
-            libero aperiam asperiores? Molestiae, laboriosam facilis!
+            Explore all your favorite at SHOP SARVEE today, featuring a curated
+            selection of products spanning from your daily essentials to your
+            yearly necessities. This is the online store you won't want to miss!
           </p>
           <br />
-          <Link to="/">SHOP NOW</Link>
+          <Link to="/">SHOP NOW {element}</Link>
         </div>
       </div>
       <div className="homeContainer">

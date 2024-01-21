@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
+/* font-family: 'League Spartan', sans-serif; */
 /* font-family: 'Open Sans', sans-serif; */
-/* font-family: 'Merriweather', serif; */
 /* Navigation */
 
 .navigation {
   position: fixed;
-  background-color: #212121;
+  background-color: #000;
   backdrop-filter: blur(5px);
   z-index: 1000;
   padding: 20px 30px;
@@ -46,7 +45,7 @@
 }
 
 .Home .hero {
-  font-family: 'Merriweather', serif;
+  font-family: 'League Spartan', sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -62,6 +61,9 @@
 
 .Home .hero img {
   width: 400px;
+  margin: 10px;
+  margin: 80px 0;
+  box-shadow: 7px 7px 8px 1px #464646d1;
 }
 
 .Home .hero .contain {
@@ -110,7 +112,7 @@
 
 .card {
   border: none !important;
-  width: 20rem !important;
+  width: 17rem !important;
 }
 
 img.card-img-top.product-preview-img {
@@ -183,6 +185,7 @@ img.card-img-top.product-preview-img {
 
 
 
+
 @media screen and (max-width: 768px) {
   .Home img {
     width: 93%;
@@ -206,5 +209,15 @@ img.card-img-top.product-preview-img {
 
   .Home .hero .contain h4 {
     font-size: 17px;
+  }
+
+  .card {
+    width: 28rem !important;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .card {
+    width: 22rem !important;
   }
 }
