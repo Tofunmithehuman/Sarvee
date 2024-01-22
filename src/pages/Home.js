@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faBasketShopping, faTruck, faShield, faRightLeft } from '@fortawesome/free-solid-svg-icons'
 import categories from "../categories";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
@@ -17,6 +17,10 @@ function Home() {
   const lastProducts = products.slice(0, 8);
 
   const element = <FontAwesomeIcon icon={faCartShopping} />;
+  const element2 = <FontAwesomeIcon icon={faBasketShopping} />;
+  const element3 = <FontAwesomeIcon icon={faTruck} style={{fontSize: "30px", marginBottom: "10px"}} />;
+  const element4 = <FontAwesomeIcon icon={faShield} style={{fontSize: "30px", marginBottom: "10px"}} />;
+  const element5 = <FontAwesomeIcon icon={faRightLeft} style={{fontSize: "30px", marginBottom: "10px"}} />;
 
   useEffect(() => {
     axios
@@ -59,29 +63,15 @@ function Home() {
           </div>
           <div>
             <Link
+            className="seemore"
               to="/category/all"
-              style={{
-                textAlign: "center",
-                display: "block",
-                textDecoration: "none",
-                color: "#000",
-                margin: "40px 0 10px",
-                fontSize: "12px",
-              }}
             >
-              See more...
+              See more products {element2}
             </Link>
           </div>
         </div>
-        {/* sale banner */}
-        <div className="sale_banner--container mt-4">
-          <img
-            src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1700572876/Untitled_design_rg0zcu.jpg"
-            alt="banner"
-          />
-        </div>
       </div>
-      <div className="recent-products-container mt-4" id="catp">
+      <div className="recent-products-container" id="catp">
         <h2>Categories</h2>
         <Row>
           {categories.map((category, index) => (
@@ -103,6 +93,26 @@ function Home() {
             </LinkContainer>
           ))}
         </Row>
+      </div>
+      <div className="why-choose-us">
+        <h2 className="text-center" style={{color: "#c5fd7a", fontSize: "30px", marginBottom: "50px", textShadow: "1px 1px 2px #00000080"}}>Why choose us?</h2>
+        <div className="container">
+          <div className="row">
+            {element3}
+            <h1>Fast Delivery</h1>
+            <p>Experience the convenience of lightning-fast delivery with Shop Sarvee. We understand that time is of the essence, and that is why we prioritize the efficiency in our delivery services.</p>
+          </div>
+          <div className="row">
+            {element4}
+            <h1>Secure Checkout</h1>
+            <p>Enjoy worry-free shopping with our secure checkout process. We prioritize the safety of your personal and financial information, ensuring that your online transactions are protected at every step.</p>
+          </div>
+          <div className="row">
+            {element5}
+            <h1>Easy Returns</h1>
+            <p>Experience hassle-free shopping with our easy return process. We understand that sometimes, a product might not meet your expectations, and that's why we've streamlined our return procedure.</p>
+          </div>
+        </div>
       </div>
     </div>
   );

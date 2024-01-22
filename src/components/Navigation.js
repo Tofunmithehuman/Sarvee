@@ -23,7 +23,7 @@ function Navigation() {
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <img src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1705793793/nav_uoak0r.jpg" alt="nav" style={{width: "170px"}} />
+            <img className="navImg" src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1705946976/nav_fzhldw.png" alt="nav" />
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle

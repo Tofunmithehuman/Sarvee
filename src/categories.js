@@ -1,15 +1,15 @@
 const categories = [
     {
         name: "Technology",
-        img: "https://res.cloudinary.com/dzzwvcapu/image/upload/v1704325386/Shopsavvy/utt2qnr5vrpcedxxgune.jpg"
+        img: "https://res.cloudinary.com/dzzwvcapu/image/upload/v1705957193/tech_bxzhbg.jpg"
     },
     {
         name: "Services",
-        img: "https://res.cloudinary.com/dzzwvcapu/image/upload/v1704325391/Shopsavvy/rdflbhgv82554lnhbb4z.jpg"
+        img: "https://res.cloudinary.com/dzzwvcapu/image/upload/v1705957193/serv_mei8b4.jpg"
     },
     {
         name: "Fashion",
-        img: "https://res.cloudinary.com/dzzwvcapu/image/upload/v1704325388/Shopsavvy/x3n1lvzs5agjelzkp6gj.jpg"
+        img: "https://res.cloudinary.com/dzzwvcapu/image/upload/v1705957193/fash_eoplvq.jpg"
     }
 ]
 

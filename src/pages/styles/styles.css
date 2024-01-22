@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* font-family: 'League Spartan', sans-serif; */
 /* font-family: 'Open Sans', sans-serif; */
 /* Navigation */
-
+* {
+  list-style: none;
+}
 .navigation {
   position: fixed;
-  background-color: #000;
+  background-color: #000000e9;
   backdrop-filter: blur(5px);
   z-index: 1000;
-  padding: 20px 30px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navigation .navImg {
+  width: 150px;
 }
 
 .custom-navbar-toggle {
@@ -34,7 +39,7 @@
 
 /* Home */
 .Home {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background: #fbfaf8;
   color: #000;
 }
@@ -45,7 +50,7 @@
 }
 
 .Home .hero {
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -70,19 +75,18 @@
   width: 499px;
 }
 
-.Home .hero .contain p{
-  font-family: 'Open Sans', sans-serif;
+.Home .hero .contain p {
+  font-family: "Open Sans", sans-serif;
 }
 
-.Home .hero .contain a{
-  font-family: 'Open Sans', sans-serif;
+.Home .hero .contain a {
+  font-family: "Open Sans", sans-serif;
   color: #000;
   background-color: #c5fd7a;
   padding: 8px 15px;
   text-decoration: none;
   border-radius: 4px;
 }
-
 
 .Home img {
   width: 100%;
@@ -92,6 +96,24 @@
   padding: 3rem;
   max-width: 1440px;
   margin: auto;
+}
+
+.Home .homeContainer .seemore {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  margin: 40px auto 10px;
+  font-size: 12px;
+  padding: 8px;
+  background-color: #c5fd7a;
+  width: 300px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.Home #catp {
+  margin-top: 100px;
 }
 
 .category-tile {
@@ -123,15 +145,36 @@ img.card-img-top.product-preview-img {
   transform: scale(1.05);
 }
 
-.sale__banner--container {
-  max-width: 1024px;
+.Home .why-choose-us {
+  margin: 150px 0 100px;
+  text-align: center;
 }
 
-.sale__banner--container img {
-  width: 100%;
-  display: block;
-  margin: 0 auto;
+.Home .why-choose-us .container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
+
+.Home .why-choose-us .container .row {
+  max-width: 400px;
+  margin: 12px;
+}
+
+.Home .why-choose-us h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.Home .why-choose-us p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 10px;
+  color: #333;
+}
+
 
 /* login */
 /* signup */
@@ -183,8 +226,17 @@ img.card-img-top.product-preview-img {
   color: orange;
 }
 
+/* Product page */
+.product__carousel--image {
+  max-width: 100%;
+  object-fit: cover;
+  max-height: 500px;
+}
 
-
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  display: none !important;
+}
 
 @media screen and (max-width: 768px) {
   .Home img {
@@ -217,6 +269,10 @@ img.card-img-top.product-preview-img {
 }
 
 @media screen and (max-width: 426px) {
+  .navigation .navImg {
+    width: 130px;
+  }
+
   .card {
     width: 22rem !important;
   }

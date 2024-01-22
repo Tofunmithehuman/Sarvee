@@ -114,11 +114,11 @@ function NewProduct() {
 
             <Form.Group className="mb-3">
               <Form.Label style={{ width: "100%", textAlign: "left" }}>
-                Product price($){" "}
+                Product price (₦){" "}
               </Form.Label>
               <Form.Control
-                type="number"
-                placeholder="Enter Product price ($)"
+                input type="text" pattern="([0-9]+.{0,1}[0-9]*,{0,1})*[0-9]"
+                placeholder="Enter Product price"
                 value={price}
                 required
                 onChange={(e) => setPrice(e.target.value)}
