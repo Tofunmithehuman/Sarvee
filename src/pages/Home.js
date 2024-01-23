@@ -14,7 +14,7 @@ import ProductPreview from "../components/ProductPreview";
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-  const lastProducts = products.slice(0, 8);
+  const lastProducts = products.slice(0, 6);
 
   const element = <FontAwesomeIcon icon={faCartShopping} />;
   const element2 = <FontAwesomeIcon icon={faBasketShopping} />;
