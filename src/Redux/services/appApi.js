@@ -6,10 +6,10 @@ export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
     // api
-    // baseUrl: "https://shopsavvy-backend-production.up.railway.app",
+    baseUrl: "https://shopsavvy-backend-production.up.railway.app",
 
     // local
-    baseUrl: 'http://localhost:3500',
+    // baseUrl: 'http://localhost:3500',
   }),
   endpoints: (builder) => ({
     signup: builder.mutation({
