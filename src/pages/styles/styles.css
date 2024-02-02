@@ -272,9 +272,6 @@ img.card-img-top.product-preview-img {
   color: white;
 }
 
-/* Toast Message */
-
-
 @media screen and (max-width: 768px) {
   .Home img {
     width: 93%;
