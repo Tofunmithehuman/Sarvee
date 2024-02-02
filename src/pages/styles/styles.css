@@ -37,6 +37,27 @@
   color: #fff;
 }
 
+#cartcount {
+  font-size: 10px;
+  background-color: red;
+  color: #fff;
+  padding: 2px 4px;
+  vertical-align: top;
+  margin-left: -8px;
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  border-radius: 9px;
+}
+
+.fa-shopping-cart {
+  font-size: 20px;
+}
+
 /* Home */
 .Home {
   font-family: "Open Sans", sans-serif;
@@ -175,7 +196,6 @@ img.card-img-top.product-preview-img {
   color: #333;
 }
 
-
 /* login */
 /* signup */
 .login__form--container,
@@ -237,6 +257,23 @@ img.card-img-top.product-preview-img {
 .alice-carousel__next-btn {
   display: none !important;
 }
+
+/* category page */
+.category-page-container {
+  min-height: 90vh;
+}
+
+.category-banner-container {
+  height: 200px;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* Toast Message */
+
 
 @media screen and (max-width: 768px) {
   .Home img {

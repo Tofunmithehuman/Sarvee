@@ -5,6 +5,7 @@ import "../pages/styles/styles.css";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/features/userSlice";
+import CartPage from "../pages/CartPage";
 
 const StyledWrapper = styled.div`
   background-color: #fff;
@@ -18,12 +19,18 @@ function Navigation() {
     dispatch(logout());
   }
 
+  console.log('User State:', user);
+
   return (
     <Navbar expand="lg" className="navigation" style={{ width: "100%" }}>
       <Container>
         <LinkContainer to="/">
           <Navbar.Brand>
-            <img className="navImg" src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1705946976/nav_fzhldw.png" alt="nav" />
+            <img
+              className="navImg"
+              src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1705946976/nav_fzhldw.png"
+              alt="nav"
+            />
           </Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle
@@ -40,7 +47,23 @@ function Navigation() {
               </LinkContainer>
             )}
 
-            {user && (
+            {user && !user.isAdmin && (
+              <LinkContainer to="/cart">
+                <Nav.Link>
+                  <i
+                    className="fas fa-shopping-cart"
+                    style={{ color: "white" }}
+                  ></i>
+                  {user.cart && user.cart.count > 0 && (
+                    <span className="badge badge-warning" id="cartcount">
+                      {user.cart.count}
+                    </span>
+                  )}
+                </Nav.Link>
+              </LinkContainer>
+            )}
+
+            {user && user.email && (
               <NavDropdown title={`${user.email}`} id="basic-nav-dropdown">
                 {user.isAdmin && (
                   <StyledWrapper>

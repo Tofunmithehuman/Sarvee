@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping, faBasketShopping, faTruck, faShield, faRightLeft } from '@fortawesome/free-solid-svg-icons'
+import {
+  faCartShopping,
+  faBasketShopping,
+  faTruck,
+  faShield,
+  faRightLeft,
+} from "@fortawesome/free-solid-svg-icons";
 import categories from "../categories";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
@@ -14,13 +20,28 @@ import ProductPreview from "../components/ProductPreview";
 function Home() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
-  const lastProducts = products.slice(0, 8);
+  const lastProducts = products.slice(0, 6);
 
   const element = <FontAwesomeIcon icon={faCartShopping} />;
   const element2 = <FontAwesomeIcon icon={faBasketShopping} />;
-  const element3 = <FontAwesomeIcon icon={faTruck} style={{fontSize: "30px", marginBottom: "10px"}} />;
-  const element4 = <FontAwesomeIcon icon={faShield} style={{fontSize: "30px", marginBottom: "10px"}} />;
-  const element5 = <FontAwesomeIcon icon={faRightLeft} style={{fontSize: "30px", marginBottom: "10px"}} />;
+  const element3 = (
+    <FontAwesomeIcon
+      icon={faTruck}
+      style={{ fontSize: "30px", marginBottom: "10px" }}
+    />
+  );
+  const element4 = (
+    <FontAwesomeIcon
+      icon={faShield}
+      style={{ fontSize: "30px", marginBottom: "10px" }}
+    />
+  );
+  const element5 = (
+    <FontAwesomeIcon
+      icon={faRightLeft}
+      style={{ fontSize: "30px", marginBottom: "10px" }}
+    />
+  );
 
   useEffect(() => {
     axios
@@ -41,7 +62,14 @@ function Home() {
         <div className="contain">
           <h4>Best Available Products</h4>
           <br />
-          <h1 style={{textShadow: "2px 2px 4px rgb(186, 186, 186)", fontWeight: "600"}}><span style={{color: "rgb(123 174 54)"}}>SHOP</span> SARVEE</h1>
+          <h1
+            style={{
+              textShadow: "2px 2px 4px rgb(186, 186, 186)",
+              fontWeight: "600",
+            }}
+          >
+            <span style={{ color: "rgb(123 174 54)" }}>SHOP</span> SARVEE
+          </h1>
           <br />
           <p>
             Explore all your favorite at SHOP SARVEE today, featuring a curated
@@ -62,10 +90,7 @@ function Home() {
             ))}
           </div>
           <div>
-            <Link
-            className="seemore"
-              to="/category/all"
-            >
+            <Link className="seemore" to="/category/all">
               See more products {element2}
             </Link>
           </div>
@@ -95,22 +120,46 @@ function Home() {
         </Row>
       </div>
       <div className="why-choose-us">
-        <h2 className="text-center" style={{color: "#c5fd7a", fontSize: "30px", marginBottom: "50px", textShadow: "1px 1px 2px #00000080"}}>Why choose us?</h2>
+        <h2
+          className="text-center"
+          style={{
+            color: "#c5fd7a",
+            fontSize: "30px",
+            marginBottom: "50px",
+            textShadow: "1px 1px 2px #00000080",
+          }}
+        >
+          Why choose us?
+        </h2>
         <div className="container">
           <div className="row">
             {element3}
             <h1>Fast Delivery</h1>
-            <p>Experience the convenience of lightning-fast delivery with Shop Sarvee. We understand that time is of the essence, and that is why we prioritize the efficiency in our delivery services.</p>
+            <p>
+              Experience the convenience of lightning-fast delivery with Shop
+              Sarvee. We understand that time is of the essence, and that is why
+              we prioritize the efficiency in our delivery services.
+            </p>
           </div>
           <div className="row">
             {element4}
             <h1>Secure Checkout</h1>
-            <p>Enjoy worry-free shopping with our secure checkout process. We prioritize the safety of your personal and financial information, ensuring that your online transactions are protected at every step.</p>
+            <p>
+              Enjoy worry-free shopping with our secure checkout process. We
+              prioritize the safety of your personal and financial information,
+              ensuring that your online transactions are protected at every
+              step.
+            </p>
           </div>
           <div className="row">
             {element5}
             <h1>Easy Returns</h1>
-            <p>Experience hassle-free shopping with our easy return process. We understand that sometimes, a product might not meet your expectations, and that's why we've streamlined our return procedure.</p>
+            <p>
+              Experience hassle-free shopping with our easy return process. We
+              understand that sometimes, a product might not meet your
+              expectations, and that's why we've streamlined our return
+              procedure.
+            </p>
           </div>
         </div>
       </div>

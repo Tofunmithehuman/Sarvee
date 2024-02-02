@@ -2,19 +2,30 @@ import axios from "../axios";
 import React, { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { Row, Col, Container, Badge, ButtonGroup, Form, Button } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Container,
+  Badge,
+  ButtonGroup,
+  Form,
+  Button,
+} from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import SimilarProduct from "../components/SimilarProduct";
 import "../pages/styles/styles.css";
 import { LinkContainer } from "react-router-bootstrap";
+import { useAddToCartMutation } from "../Redux/services/appApi";
+import ToastMessage from "../components/ToastMessage";
 
 function ProductPage() {
   const { id } = useParams();
   const user = useSelector((state) => state.user);
   const [product, setProduct] = useState(null);
-  const [similar, setSimilar] = useState(null); // Fix here
+  const [similar, setSimilar] = useState(null);
+  const [addToCart, { isSuccess }] = useAddToCartMutation();
 
   const handleDragStart = (e) => {
     e.preventDefault();
@@ -35,10 +46,10 @@ function ProductPage() {
   if (!product) return <Loading />;
 
   const responsive = {
-      0: {items: 1},
-      568: {items: 2},
-      1024: {items: 3}
-  }
+    0: { items: 1 },
+    568: { items: 2 },
+    1024: { items: 3 },
+  };
 
   const images = product.pictures.map((pictures) => (
     <img
@@ -78,30 +89,51 @@ function ProductPage() {
             <strong>Description:</strong> {product.description}
           </p>
           {user && !user.isAdmin && (
-            <ButtonGroup style={{width: '90%'}}>
-                <Form.Select size='lg' style={{width: "40%", borderRadius: "0"}}> 
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </Form.Select>
-                <Button size='lg'>Add to cart</Button>
+            <ButtonGroup style={{ width: "90%" }}>
+              <Form.Select
+                size="lg"
+                style={{ width: "40%", borderRadius: "0" }}
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </Form.Select>
+              <Button
+                size="lg"
+                onClick={() =>
+                  addToCart({
+                    userId: user._id,
+                    productId: id,
+                    price: product.price,
+                    image: product.pictures[0].url,
+                  })
+                }
+              >
+                Add to cart
+              </Button>
             </ButtonGroup>
           )}
 
           {user && user.isAdmin && (
             <LinkContainer to={`/product/${product._id}/edit`}>
-              <Button size='lg'>Edit Product</Button>
+              <Button size="lg">Edit Product</Button>
             </LinkContainer>
           )}
+          {isSuccess && <ToastMessage bg="info" title="Added to cart" body={`${product.name} is in your cart`} />}
         </Col>
       </Row>
       <div className="my-4">
-            <h2>Similar Products</h2>
-            <div className="d-flex justify-content-center align-items-center flex-wrap mt-5">
-              <AliceCarousel mouseTracking items={similarProducts} responsive={responsive} controlsStrategy="alternate"></AliceCarousel>
-            </div>
+        <h2>Similar Products</h2>
+        <div className="d-flex justify-content-center align-items-center flex-wrap mt-5">
+          <AliceCarousel
+            mouseTracking
+            items={similarProducts}
+            responsive={responsive}
+            controlsStrategy="alternate"
+          ></AliceCarousel>
+        </div>
       </div>
     </Container>
   );

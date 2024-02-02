@@ -6,10 +6,10 @@ export const appApi = createApi({
   reducerPath: "appApi",
   baseQuery: fetchBaseQuery({
     // api
-    baseUrl: "https://shopsavvy-backend-production.up.railway.app",
+    // baseUrl: "https://shopsavvy-backend-production.up.railway.app",
 
     // local
-    // baseUrl: 'http://localhost:3500',
+    baseUrl: 'http://localhost:3500',
   }),
   endpoints: (builder) => ({
     signup: builder.mutation({
@@ -35,10 +35,49 @@ export const appApi = createApi({
         method: "POST",
       }),
     }),
+
+    addToCart: builder.mutation({
+      query: (cartInfo) => ({
+        url: "/products/add-to-cart",
+        body: cartInfo,
+        method: "POST",
+      }),
+    }),
+
+    removeFromCart: builder.mutation({
+      query: (body) => ({
+        url: "/products/remove-from-cart",
+        body,
+        method: "DELETE",
+      }),
+    }),
+
+    increaseCartProduct: builder.mutation({
+      query: (body) => ({
+        url: "/products/increase-cart",
+        body,
+        method: "POST",
+      }),
+    }),
+
+    decreaseCartProduct: builder.mutation({
+      query: (body) => ({
+        url: "/products/decrease-cart",
+        body,
+        method: "POST",
+      }),
+    }),
   }),
 });
 
-export const { useSignupMutation, useLoginMutation, useCreateProductMutation } =
-  appApi;
+export const {
+  useSignupMutation,
+  useLoginMutation,
+  useCreateProductMutation,
+  useAddToCartMutation,
+  useRemoveFromCartMutation,
+  useIncreaseCartProductMutation,
+  useDecreaseCartProductMutation,
+} = appApi;
 
 export default appApi;
