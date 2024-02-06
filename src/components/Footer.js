@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <footer
-      className="text-center text-lg-start bg-body-tertiary text-muted"
+      className="text-center text-lg-start bg-black text-light"
       style={{ paddingTop: "100px" }}
     >
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
