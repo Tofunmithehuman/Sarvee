@@ -11,6 +11,7 @@ import ProductPage from "./pages/ProductPage";
 import CategoryPage from "./pages/CategoryPage";
 import ScrollToTop from "./components/ScrollToTop";
 import CartPage from "./pages/CartPage";
+import Footer from "./components/Footer";
 
 function App() {
   const user = useSelector((state) => state.user);
@@ -39,6 +40,7 @@ function App() {
         <Route path="/new-product" element={<NewProduct />} />
         <Route path="*" element={<Home />} />
       </Routes>
+          <Footer />
     </div>
   );
 }
