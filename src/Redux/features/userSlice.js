@@ -4,7 +4,7 @@ import appApi from "../services/appApi";
 const initialState = null;
 
 export const userSlice = createSlice({
-  name: "user",
+  name: "users",
   initialState,
   reducers: {
     logout: () => initialState,
@@ -37,5 +37,11 @@ export const userSlice = createSlice({
   },
 });
 
-export const { logout } = userSlice.actions;
+export const {
+  logout,
+  addToCart,
+  removeFromCart,
+  increaseCartProduct,
+  decreaseCartProduct,
+} = userSlice.actions;
 export default userSlice.reducer;

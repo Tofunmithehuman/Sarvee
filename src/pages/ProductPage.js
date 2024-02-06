@@ -31,6 +31,17 @@ function ProductPage() {
     e.preventDefault();
   };
 
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    addToCart({
+      userId: user._id,
+      productId: id,
+      price: product.price,
+      image: product.pictures[0].url,
+    });
+  };
+
+
   useEffect(() => {
     axios
       .get(`/products/${id}`)
@@ -102,14 +113,7 @@ function ProductPage() {
               </Form.Select>
               <Button
                 size="lg"
-                onClick={() =>
-                  addToCart({
-                    userId: user._id,
-                    productId: id,
-                    price: product.price,
-                    image: product.pictures[0].url,
-                  })
-                }
+                onClick={handleAddToCart}
               >
                 Add to cart
               </Button>
@@ -121,7 +125,13 @@ function ProductPage() {
               <Button size="lg">Edit Product</Button>
             </LinkContainer>
           )}
-          {isSuccess && <ToastMessage bg="info" title="Added to cart" body={`${product.name} is in your cart`} />}
+          {isSuccess && (
+            <ToastMessage
+              bg="info"
+              title="Added to cart"
+              body={`${product.name} is in your cart`}
+            />
+          )}
         </Col>
       </Row>
       <div className="my-4">

@@ -54,7 +54,7 @@ function Navigation() {
                     className="fas fa-shopping-cart"
                     style={{ color: "white" }}
                   ></i>
-                  {user.cart && user.cart.count > 0 && (
+                  {user?.cart.count > 0 && (
                     <span className="badge badge-warning" id="cartcount">
                       {user.cart.count}
                     </span>
@@ -63,7 +63,7 @@ function Navigation() {
               </LinkContainer>
             )}
 
-            {user && user.email && (
+            {user && (
               <NavDropdown title={`${user.email}`} id="basic-nav-dropdown">
                 {user.isAdmin && (
                   <StyledWrapper>
