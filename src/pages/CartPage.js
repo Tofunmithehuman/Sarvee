@@ -1,6 +1,7 @@
 import React from "react";
 import "../pages/styles/styles.css";
 import { useSelector } from "react-redux";
+import { usePaystackPayment } from "react-paystack";
 import { Alert, Container, Row, Col, Table } from "react-bootstrap";
 import {
   useIncreaseCartProductMutation,
@@ -19,9 +20,24 @@ function CartPage() {
 
   function handleDecrease(product) {
     const quantity = user.cart.count;
-    if (quantity <= 0) return alert("Cannot proceed");
-    decreaseCart(product);
+    if (quantity <= 0) {
+      return alert("Cannot proceed");
+    } else {
+      decreaseCart(product);
+    }
   }
+
+  const initializePayment = usePaystackPayment({
+    reference: new Date().getTime().toString(),
+    email: user.email,
+    amount: user.cart.total * 100,
+    publicKey: "pk_test_8ca3f9b7de80e6aa263ff82b29ac2ec0bf4c4aa1",
+    onClose: () => null,
+    onSuccess: () => {
+      alert("Payment successful!");
+      // Here you can clear the cart or redirect to a success page
+    },
+  });
 
   return (
     <Container
@@ -36,7 +52,7 @@ function CartPage() {
               Shopping cart is empty. Add products to your cart
             </Alert>
           ) : (
-            <div>Payment here</div>
+            <button style={{outline: "none", border: "1px solid #c5fd7a", backgroundColor: "#c5fd7a", padding: "5px 20px 8px", margin:"35px 0", borderRadius:"4px"}} onClick={initializePayment}>Pay with Paystack</button>
           )}
         </Col>
         <Col md={5}>
