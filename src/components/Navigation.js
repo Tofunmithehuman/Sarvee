@@ -19,7 +19,7 @@ function Navigation() {
     dispatch(logout());
   }
 
-  console.log('User State:', user);
+  console.log("User State:", user);
 
   return (
     <Navbar expand="lg" className="navigation" style={{ width: "100%" }}>

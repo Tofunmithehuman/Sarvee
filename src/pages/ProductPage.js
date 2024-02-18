@@ -41,7 +41,6 @@ function ProductPage() {
     });
   };
 
-
   useEffect(() => {
     axios
       .get(`/products/${id}`)
@@ -111,10 +110,7 @@ function ProductPage() {
                 <option value="4">4</option>
                 <option value="5">5</option>
               </Form.Select>
-              <Button
-                size="lg"
-                onClick={handleAddToCart}
-              >
+              <Button size="lg" onClick={handleAddToCart}>
                 Add to cart
               </Button>
             </ButtonGroup>

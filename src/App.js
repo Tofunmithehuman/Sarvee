@@ -40,7 +40,7 @@ function App() {
         <Route path="/new-product" element={<NewProduct />} />
         <Route path="*" element={<Home />} />
       </Routes>
-          <Footer />
+      <Footer />
     </div>
   );
 }

@@ -6,7 +6,10 @@ function Footer() {
       className="text-center text-lg-start bg-black text-light"
       style={{ paddingTop: "100px" }}
     >
-      <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" style={{maxWidth:"1440px", margin: "auto"}}>
+      <section
+        className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+        style={{ maxWidth: "1440px", margin: "auto" }}
+      >
         <div className="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>
         </div>
@@ -31,8 +34,12 @@ function Footer() {
           <div className="row mt-3">
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4 d-flex align-items-center justify-content-center justify-content-lg-start">
-                <img src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1708218704/Sarvee_fabrvr.jpg" width={30} alt="icon" />Sarvee
-                
+                <img
+                  src="https://res.cloudinary.com/dzzwvcapu/image/upload/v1708218704/Sarvee_fabrvr.jpg"
+                  width={30}
+                  alt="icon"
+                />
+                Sarvee
               </h6>
               <p>
                 Discover a world of convenience and quality at Sarvee. Shop

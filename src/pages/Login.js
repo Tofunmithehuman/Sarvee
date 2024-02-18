@@ -15,7 +15,7 @@ function Login() {
   }
 
   return (
-    <Container style={{ paddingTop: "60px", fontFamily: 'Open Sans' }}>
+    <Container style={{ paddingTop: "60px", fontFamily: "Open Sans" }}>
       <Row>
         <Col md={6} className="login__form--container">
           <Form style={{ width: "90%" }} onSubmit={handleLogin}>

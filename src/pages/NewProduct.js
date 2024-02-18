@@ -72,8 +72,7 @@ function NewProduct() {
         width: "90%",
         background: "#fbfaf8",
         color: "#000",
-        fontFamily: 'Open Sans'
-
+        fontFamily: "Open Sans",
       }}
     >
       <Row>
@@ -117,7 +116,9 @@ function NewProduct() {
                 Product price (₦){" "}
               </Form.Label>
               <Form.Control
-                input type="text" pattern="([0-9]+.{0,1}[0-9]*,{0,1})*[0-9]"
+                input
+                type="text"
+                pattern="([0-9]+.{0,1}[0-9]*,{0,1})*[0-9]"
                 placeholder="Enter Product price"
                 value={price}
                 required
@@ -132,7 +133,10 @@ function NewProduct() {
               <Form.Label style={{ width: "100%", textAlign: "left" }}>
                 Category
               </Form.Label>
-              <Form.Select value={category} onChange={(e) => setCategory(e.target.value)}>
+              <Form.Select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
                 <option disabled> -- Select One -- </option>
                 <option value="technology"> Technology </option>
                 <option value="services"> Services </option>
