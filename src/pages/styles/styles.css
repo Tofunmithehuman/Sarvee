@@ -272,6 +272,24 @@ img.card-img-top.product-preview-img {
   color: white;
 }
 
+/* cart page */
+.fa-plus-circle .fa-minus-circle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.fa-plus-circle {
+  margin-left: 5px;
+}
+.fa-minus-circle {
+  margin-right: 5px;
+}
+
+.table-responsive-sm {
+  max-height: 70vh;
+  overflow: scroll;
+}
+
 @media screen and (max-width: 768px) {
   .Home img {
     width: 93%;

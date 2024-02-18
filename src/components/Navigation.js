@@ -5,7 +5,7 @@ import "../pages/styles/styles.css";
 import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/features/userSlice";
-import CartPage from "../pages/CartPage";
+// import CartPage from "../pages/CartPage";
 
 const StyledWrapper = styled.div`
   background-color: #fff;

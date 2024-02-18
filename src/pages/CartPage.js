@@ -2,12 +2,26 @@ import React from "react";
 import "../pages/styles/styles.css";
 import { useSelector } from "react-redux";
 import { Alert, Container, Row, Col, Table } from "react-bootstrap";
+import {
+  useIncreaseCartProductMutation,
+  useDecreaseCartProductMutation,
+  useRemoveFromCartMutation,
+} from "../Redux/services/appApi";
 
 function CartPage() {
   const user = useSelector((state) => state.user);
   const products = useSelector((state) => state.products);
   const userCartObj = user.cart;
   let cart = products.filter((product) => userCartObj[product._id] != null);
+  const [increaseCart] = useIncreaseCartProductMutation();
+  const [decreaseCart] = useDecreaseCartProductMutation();
+  const [removeFromCart, { isLoading }] = useRemoveFromCartMutation();
+
+  function handleDecrease(product) {
+    const quantity = user.cart.count;
+    if (quantity <= 0) return alert("Cannot proceed");
+    decreaseCart(product);
+  }
 
   return (
     <Container
@@ -30,22 +44,33 @@ function CartPage() {
             <>
               <Table responsive="sm" className="cart-table">
                 <thead>
-                  <th>&nbsp;</th>
-                  <th>Product</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Subtotal</th>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                  </tr>
                 </thead>
 
                 <tbody>
                   {cart.map((item) => (
-                    <tr>
+                    <tr key={item._id}>
                       <td>&nbsp;</td>
                       <td>
-                        <i
-                          className="fa fa-times"
-                          style={{ marginRight: "10", cursor: "pointer" }}
-                        ></i>
+                        {!isLoading && (
+                          <i
+                            className="fa fa-times"
+                            style={{ marginRight: "10", cursor: "pointer" }}
+                            onClick={() =>
+                              removeFromCart({
+                                productId: item._id,
+                                price: item.price,
+                                userId: user._id,
+                              })
+                            }
+                          ></i>
+                        )}
                         <img
                           src={item.pictures[0].url}
                           alt="itemPicture"
@@ -56,20 +81,39 @@ function CartPage() {
                           }}
                         />
                       </td>
-                      <td>${item.price}</td>
+                      <td>₦{item.price}</td>
                       <td>
                         <span className="quantity-indicator">
-                          <i className="fa fa-minus-circle"></i>
-                          <i className="fa fa-plus-circle"></i>
+                          <i
+                            className="fa fa-minus-circle"
+                            onClick={() =>
+                              handleDecrease({
+                                productId: item._id,
+                                price: item.price,
+                                userId: user._id,
+                              })
+                            }
+                          ></i>
+                          <span>{user.cart[item._id]}</span>
+                          <i
+                            className="fa fa-plus-circle"
+                            onClick={() =>
+                              increaseCart({
+                                productId: item._id,
+                                price: item.price,
+                                userId: user._id,
+                              })
+                            }
+                          ></i>
                         </span>
                       </td>
-                      <td>${item.price * user.cart[item._id]}</td>
+                      <td>₦{item.price * user.cart[item._id]}</td>
                     </tr>
                   ))}
                 </tbody>
               </Table>
               <div>
-                <h3 className="h4 pt-4">Total: ${user.cart.total}</h3>
+                <h3 className="h4 pt-4">Total: ₦{user.cart.total}</h3>
               </div>
             </>
           )}

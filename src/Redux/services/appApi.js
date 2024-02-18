@@ -48,7 +48,7 @@ export const appApi = createApi({
       query: (body) => ({
         url: "/products/remove-from-cart",
         body,
-        method: "DELETE",
+        method: "POST",
       }),
     }),
 
